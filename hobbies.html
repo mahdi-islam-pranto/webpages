@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8" />
+    <title>My Hobbies</title>
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+</head>
+<body>
+    <!-- <header>
+        <h1 style="text-align: center;">My Hobbies</h1>
+    </header> -->
+    
+    <section id="hobbies-list">
+        <h2>My Hobbies</h2>
+        <ul>
+            <li>Reading</li><br>
+            <li>Coding</li><br>
+            <li>Watch Movies</li><br>
+            <li>Traveling</li><br>
+            <li>Photography</li><br>
+            <li>Play Football</li><br>
+            
+        </ul>
+    </section>
+    <footer>
+        <p id="location"></p>
+        <p id="lastModified"></p>
+    </footer>
+    <script>
+        function displayInfo() {
+            document.getElementById('location').innerText = window.location.href;
+            document.getElementById('lastModified').innerText = document.lastModified;
+        }
+        window.onload = displayInfo;
+    </script>
+</body>
+</html>

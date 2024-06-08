@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8" />
+    <title>My Home Page</title>
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <script>
+        function displayInfo() {
+            document.getElementById('location').innerText = window.location.href;
+            document.getElementById('lastModified').innerText = document.lastModified;
+        }
+    </script>
+</head>
+<body onload="displayInfo()">
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#personal-info">Personal Information</a></li>
+                <li><a href="#objective">Objective</a></li>
+                <li><a href="/hobbies.html">Hobbies</a></li>
+                <li><a href="#favorite-links">Favorite Links</a></li>
+            </ul>
+        </nav>
+        
+    </header>
+   
+    <h1 style="text-align: center;">Mahdi Islam</h1>
+    <section id="personal-info">
+        <h2>Personal Information</h2>
+        <p> Age: 24<address>Uttara, Dhaka</address><br>University: Brac University<br><br>Semester: 12th</p>
+
+    </section>
+    <section id="objective">
+        <h2>Objective</h2>
+        <p>A proactive Computer Science and Engineering student at <a href="http://www.bracu.ac.bd" target="_blank">BRAC University</a> and a software engineer intern. Currently focused on Mobile App development and Web development.
+            I am a quick learner and enjoy staying up-to-date on the latest trends and technologies in the field.</p>
+    </section>
+    <section id="favorite-links"> 
+        <h2>Favorite Links</h2>
+        <ul>
+            <li><a href="http://www.bracu.ac.bd" target="_blank">BRAC University</a></li>
+            <li><a href="/hobbies.html" target="_blank">Hobbies</a></li>
+            <li><a href="/movies.html" target="_blank">Favorite Movies</a></li>
+            
+        </ul>
+    </section>
+    <footer>
+        <p id="location"></p>
+        <p id="lastModified"></p>
+    </footer>
+</body>
+</html>

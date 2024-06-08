@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8" />
+    <title>My Favorite Movies</title>
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+</head>
+<body>
+    <header>
+        
+    </header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="hobbies.html">Hobbies</a></li>
+            <li><a href="#movies-list">Movies List</a></li>
+        </ul>
+    </nav>
+    <section id="movies-list">
+        <h1 style="text-align: center;">My Favorite Movies</h1>
+        <ul class="movies">
+            <li>
+                <h3>Shawshank Redemption</h3>
+                <img src="images/movie1.jpg" alt="Movie 1 Poster" class="movie-poster" />
+                
+            </li>
+            <li>
+                <h3>Forrest Gump</h3>
+                <img src="images/movie2.jpg" alt="Movie 2 Poster" class="movie-poster" />
+                
+            </li>
+            <li>
+                <h3>Interstellar</h3>
+                <img src="images/movie3.jpg" alt="Movie 2 Poster" class="movie-poster" />
+                
+            </li>
+            <li>
+                <h3>Oppenheimer</h3>
+                <img src="https://geneticliteracyproject.org/wp-content/uploads/elementor/thumbs/Oppenheimer--qampn3kcq3t497qnkkfa84hb5itjn5tul4oicapa50.png" alt="Movie 2 Poster" class="movie-poster" />
+                
+            </li>
+            <li>
+                <h3>Cast Away</h3>
+                <img src="https://www.intofilm.org/intofilm-production/scaledcropped/870x489https%3A/s3-eu-west-1.amazonaws.com/images.cdn.filmclub.org/film__2763-cast-away--hi_res-19892109.jpg/film__2763-cast-away--hi_res-19892109.jpg" alt="Movie 2 Poster" class="movie-poster" />
+                
+            </li>
+            
+        </ul>
+    </section>
+    <footer>
+        <p id="location"></p>
+        <p id="lastModified"></p>
+    </footer>
+    <script>
+        function displayInfo() {
+            document.getElementById('location').innerText = window.location.href;
+            document.getElementById('lastModified').innerText = document.lastModified;
+        }
+        window.onload = displayInfo;
+    </script>
+</body>
+</html>
