@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8" />
+    <title>My Daily Diet Plan</title>
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+</head>
+<body>
+    
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="hobbies.html">Hobbies</a></li>
+            <li><a href="movies.html">Movies</a></li>
+            <li><a href="#diet-plan">Diet Plan</a></li>
+        </ul>
+    </nav>
+    <section id="diet-plan">
+        <h1 style="text-align: center;">My Daily Diet Plan</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Meal</th>
+                    <th>Food</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Breakfast</td>
+                    <td>Oatmeal with fruits</td>
+                </tr>
+                <tr>
+                    <td>Morning Snack</td>
+                    <td>Greek yogurt with honey</td>
+                </tr>
+                <tr>
+                    <td>Lunch</td>
+                    <td>Grilled chicken salad</td>
+                </tr>
+                <tr>
+                    <td>Afternoon Snack</td>
+                    <td>Mixed nuts</td>
+                </tr>
+                <tr>
+                    <td>Dinner</td>
+                    <td>Steamed vegetables with quinoa</td>
+                </tr>
+                <tr>
+                    <td>Evening Snack</td>
+                    <td>Fruit smoothie</td>
+                </tr>
+                <!-- Add more meals and foods as needed -->
+            </tbody>
+        </table>
+    </section>
+    <footer>
+        <p id="location"></p>
+        <p id="lastModified"></p>
+    </footer>
+    <script>
+        function displayInfo() {
+            document.getElementById('location').innerText = window.location.href;
+            document.getElementById('lastModified').innerText = document.lastModified;
+        }
+        window.onload = displayInfo;
+    </script>
+</body>
+</html>
