@@ -1,16 +1,17 @@
+// array for the generated fortune
 const array = [
-    "True wisdom comes not from knowledge, but from understanding.",
-        "Patience is a virtue that can take you far.",
-        "Every day is a second chance.",
-        "Happiness often sneaks in through a door you didn't know you left open.",
+    "True wisdom comes not from knowledge, but from understanding",
+        "Just one small positive thought in the morning can change your whole day",
+        "Every day is a second chance",
+        "You must be the change you wish to see in the world",
         "The greatest risk is not taking one.",
         "Believe in yourself and all that you are.",
-        "Success is a journey, not a destination.",
-        "A journey of a thousand miles begins with a single step.",
-        "Dream big and dare to fail.",
+        "Success is not final, failure is not fatal: it is the courage to continue that counts",
+        "Love yourself first and everything else falls into line",
+        "You only live once, but if you do it right, once is enough",
         "Your life does not get better by chance, it gets better by change."
 ];
-const randomElement = getRandomElement(array);
+
 
 function displayFortune(array) {
     
