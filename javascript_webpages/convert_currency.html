@@ -7,7 +7,7 @@
     <script src="script.js"></script>
    
 </head>
-<body onload="displayFortune(array)">
+<body >
     <header>
         <nav>
             <ul>
@@ -22,10 +22,34 @@
     </header>
    
     <h1 style="text-align: center;">Convert Currency</h1>
-    <section id="fortune">
+    <section id="currency-values">
+        <img src="images/currency-value.PNG" alt="Currency Conversion Rates">
+        <form action="" class="convert-form">
+            <div class="form-group">
+                <input type="number" id="usd" name="usd" oninput="convertCurrency('usd')" />
+                <label for="usd">USD</label>
+            </div>
         
-        <h2 class="fortune-text" id="fortune-text" style="color: #4CAF50;"></h2>
+            <div class="form-group">
+                <input type="number" id="gbp" name="gbp" oninput="convertCurrency('gbp')" />
+                <label for="gbp">GBP</label>
+            </div>
+        
+            <div class="form-group">
+                <input type="number" id="cad" name="cad" oninput="convertCurrency('cad')" />
+                <label for="cad">CAD</label>
+            </div>
 
+            <div class="form-group">
+                <input type="number" id="eur" name="eur" oninput="convertCurrency('eur')" />
+                <label for="eur">EUR</label>
+            </div>
+        
+            <div class="form-group">
+                <input type="number" id="aud" name="aud" oninput="convertCurrency('aud')" />
+                <label for="aud">AUD</label>
+            </div>
+        </form>
     </section>
     
     <!-- <footer>

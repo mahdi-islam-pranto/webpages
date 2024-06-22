@@ -56,6 +56,37 @@ section {
 }
 
 
+/* currency convert form styles */
+
+#currency-values {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+form {
+    padding: 20px;
+}
+
+.convert-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.form-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px; 
+}
+
+.form-group label {
+    margin-left: 10px; 
+}
+
+
+.form-group input {
+    flex: 1;
+}
 
  /* footer styles */
 
