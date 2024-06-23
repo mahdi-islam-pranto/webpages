@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <title>Random Fortune</title>
     <link rel="stylesheet" type="text/css" href="style.css" />
-    <script src="script.js"></script>
+    
    
 </head>
 <body onload="displayFortune(array)">
@@ -12,7 +12,7 @@
         <nav>
             <ul>
                 <li><a href="/portfolio webages/index.html">Mahdi Islam</a></li>
-                <li><a href="#fortune">Random Fortune</a></li>
+                <li><a href="index.html">Random Fortune</a></li>
                 <li><a href="convert_currency.html">Convert Currency</a></li>
                 <li><a href="quiz.html">Take Quiz</a></li>
                 
@@ -21,12 +21,16 @@
         
     </header>
    
-    <h1 style="text-align: center;">Today's Fortune</h1>
-    <section id="fortune">
-        
-        <h2 class="fortune-text" id="fortune-text" style="color: #4CAF50;"></h2>
-
-    </section>
+    <h1 style="text-align: center;">Start Your First Quiz</h1>
+    <main>
+        <section id="quiz-section">
+            <p id="instructions">Enter the number of questions you want to attempt (default is 5):</p>
+            <input type="number" id="num-questions" min="1" max="10" value="5">
+            <button onclick="startQuiz()">Start Quiz</button>
+            <div id="quiz-container"></div>
+            <div id="result-container"></div>
+        </section>
+    </main>
     
     <!-- <footer>
         <p id="location"></p>

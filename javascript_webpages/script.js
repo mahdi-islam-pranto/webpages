@@ -12,7 +12,7 @@ const array = [
         "Your life does not get better by chance, it gets better by change."
 ];
 
-
+// fortune generate function
 function displayFortune(array) {
     
     const randomIndex = Math.floor(Math.random() * array.length);
@@ -43,8 +43,8 @@ const conversionRates = {
 };
 
 // convert currency function
-function convertCurrency(baseCurrency) {
-    const baseValue = parseFloat(document.getElementById(baseCurrency).value);
+function convertCurrency(baseCurrency) {  //usd
+    const baseValue = parseFloat(document.getElementById(baseCurrency).value); // 3
 
     if (isNaN(baseValue)) return;
 
@@ -56,14 +56,160 @@ function convertCurrency(baseCurrency) {
     };
 }
 
+// quiz questions
+
+const questions = [
+    {
+        question: "What is the capital of Bangladesh?",
+        answers: ["A) Dhaka City", "B) Rajshahi City", "C) Khulna city"],
+        correct: "A"
+    },
+    {
+        question: "How many meters in a K.M?",
+        answers: ["A) 200", "B) 1000", "C) 100"],
+        correct: "B"
+    },
+    {
+        question: "Who was the first person to set foot on the moon?",
+        answers: ["A) Buzz Aldrin", "B) Michael Collins", "C) Neil Armstrong"],
+        correct: "C"
+    },
+    {
+        question: "Who has the most goals in International Football?",
+        answers: ["A) CR7", "B) Leo Messi", "C) Harry Kane"],
+        correct: "A"
+    },
+    {
+        question: "Who is the founder of Tesla?",
+        answers: ["A) Bill Gates", "B) Elon Mask", "C) Warren Buffet"],
+        correct: "B"
+    },
+    {
+        question: "Who is the founder of Tesla?",
+        answers: ["A) Bill Gates", "B) Elon Mask", "C) Warren Buffet"],
+        correct: "B"
+    },
+    {
+        question: "Who is the founder of Tesla?",
+        answers: ["A) Bill Gates", "B) Elon Mask", "C) Warren Buffet"],
+        correct: "B"
+    },
+    {
+        question: "Who is the founder of Tesla?",
+        answers: ["A) Bill Gates", "B) Elon Mask", "C) Warren Buffet"],
+        correct: "B"
+    },
+    {
+        question: "Who is the founder of Tesla?",
+        answers: ["A) Bill Gates", "B) Elon Mask", "C) Warren Buffet"],
+        correct: "B"
+    },
+    {
+        question: "Who is the founder of Tesla?",
+        answers: ["A) Bill Gates", "B) Elon Mask", "C) Warren Buffet"],
+        correct: "B"
+    },
+    
+];
+
+
+// make quiz logics
+
+function startQuiz() {
+    const numQuestionsInput = document.getElementById("num-questions");
+    const numQuestions = parseInt(numQuestionsInput.value) || 5;
+
+    if (numQuestions > questions.length) {
+        alert(`Please select maximum 10 questions.`);
+        return;
+    }
+
+    const selectedQuestions = getRandomQuestions(numQuestions);
+    displayQuiz(selectedQuestions);
+}
+
+function getRandomQuestions(num) {
+    const shuffledQuestions = questions.sort(() => 0.5 - Math.random());
+    return shuffledQuestions.slice(0, num);
+}
+
+function displayQuiz(selectedQuestions) {
+    const quizContainer = document.getElementById("quiz-container");
+    quizContainer.innerHTML = "";
+
+    selectedQuestions.forEach((q, index) => {
+        const questionBlock = document.createElement("div");
+        questionBlock.className = "question-block";
+
+        const questionText = document.createElement("p");
+        questionText.textContent = `${index + 1}. ${q.question}`;
+
+        questionBlock.appendChild(questionText);
+
+        q.answers.forEach(answer => {
+            const answerLabel = document.createElement("label");
+            answerLabel.textContent = answer;
+
+            const answerInput = document.createElement("input");
+            answerInput.type = "radio";
+            answerInput.name = `question-${index}`;
+            answerInput.value = answer[0];
+
+            questionBlock.appendChild(answerInput);
+            questionBlock.appendChild(answerLabel);
+            questionBlock.appendChild(document.createElement("br"));
+        });
+
+        quizContainer.appendChild(questionBlock);
+    });
+
+    const submitButton = document.createElement("button");
+    submitButton.textContent = "Submit Quiz";
+    submitButton.onclick = () => submitQuiz(selectedQuestions);
+
+    quizContainer.appendChild(submitButton);
+}
+
+// logic after submiting the quiz
+function submitQuiz(selectedQuestions) {
+    let correctCount = 0;
+
+    // loop every question and check correct or not
+    selectedQuestions.forEach((q, index) => {
+        const answer = document.querySelector(`input[name="question-${index}"]:checked`);
+        const resultText = document.createElement("p");
+
+        if (answer) {
+            const userAnswer = answer.value;
+            if (userAnswer === q.correct) {
+                resultText.textContent = `Question ${index + 1}: CORRECT`;
+                resultText.className = "correct";
+                correctCount++;
+            } else {
+                resultText.textContent = `Question ${index + 1}: INCORRECT, the correct answer is ${q.correct})`;
+                resultText.className = "incorrect";
+            }
+        } else {
+            resultText.textContent = `Question ${index + 1}: No answer provided, the correct answer is ${q.correct})`;
+            resultText.className = "incorrect";
+        }
+
+        document.getElementById("result-container").appendChild(resultText);
+    });
+
+    const totalQuestions = selectedQuestions.length;
+    const percentage = ((correctCount / totalQuestions) * 100).toFixed(1);
+
+    const summaryText = document.createElement("p");
+    summaryText.textContent = ` ${correctCount} Questions Correct out of ${totalQuestions} questions.  (${percentage}%).`;
+
+    document.getElementById("result-container").appendChild(summaryText);
+    
+}
 
 
 
-
-
-
-
-
+// page reload function
 
 window.onload = function() {
     displayFortune(array);
